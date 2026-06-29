@@ -67,82 +67,10 @@
         <h2 class="subtitle">KNOWLEDGE</h2>
         <div class="progress-bar"></div>
         <div id="knowColumns">
-        <div class="col1">
-            <div class="know">
-                <img class="logoK" src="./IMG/HTML LOGO.png" alt="Html logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/CSS LOGO.png" alt="Css logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/JS LOGO.png" alt="Js logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/NODE LOGO.png" alt="Node logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/REACT LOGO.png" alt="React logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-        </div>
-        <div class="col2">
-            <div class="know">
-                <img class="logoK" src="./IMG/FIGMA LOGO.png" alt="Figma logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/AE LOGO.png" alt="Ae logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/PR LOGO.png" alt="Pr logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/AI LOGO.png" alt="Ai logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
-            <div class="know">
-                <img class="logoK" src="./IMG/PS LOGO.png" alt="PS logo">
-                <div class="tecskills">
-                <p class="percent">10%</p>
-                <hr class="skills">
-                </div>
-            </div>
         </div>
     </div>
-    </div>
+
+    
     <!-- SERVICES -->
     <div class="services" id="services">
         <h2 class="subtitle">SERVICES</h2>
@@ -151,14 +79,14 @@
         <div class="leftbox"></div>
         <div id="allservicesbox">
             <div class="box_service">
-                <img class="imgService" src="./IMG/front-end.png" alt="Front-end">
+                <img class="imgService" src="./IMG/frontEnd.png" alt="Front-end">
                     <h2 class="serviceTitle">FRONT-END</h2>
                     <p class="textService">Web interface development using HTML, CSS, and JavaScript, 
                         focused on performance, responsiveness, and accessibility.
                     </p> 
             </div>
             <div class="box_service">
-                <img class="imgService" src="" alt="">
+                <img class="imgService" src="./IMG/uiux.png" alt="UI/UX">
                     <h2 class="serviceTitle">UI/UX DESIGN</h2>
                     <p class="textService">
                         User-centered interface design, focused on usability, 
@@ -166,7 +94,7 @@
                     </p> 
             </div>
             <div class="box_service">
-                <img class="imgService" src="" alt="">
+                <img class="imgService" src="./IMG/videoEditing.png" alt="Video Editing">
                     <h2 class="serviceTitle">VIDEO EDITING</h2>
                     <p class="textService">
                         Video editing and production, including cuts, transitions, and color correction, 
@@ -175,7 +103,7 @@
                     </p> 
             </div>
             <div class="box_service">
-                <img class="imgService" src="" alt="">
+                <img class="imgService" src="./IMG/digitalArt.png" alt="Digital Art">
                     <h2 class="serviceTitle">IMAGE EDITING</h2>
                     <p class="textService">
                         Image editing and manipulation, including cropping, 
@@ -183,7 +111,7 @@
                     </p> 
             </div>
             <div class="box_service">
-                <img class="imgService" src="" alt="">
+                <img class="imgService" src="./IMG/imageEditing.png" alt="Image Editing">
                     <h2 class="serviceTitle">DIGITAL ART</h2>
                     <p class="textService">
                         Creation of vector and pixel art digital assets for interfaces, 
@@ -191,7 +119,7 @@
                     </p> 
             </div>
             <div class="box_service">
-                <img class="imgService" src="" alt="">
+                <img class="imgService" src="./IMG/gamification.png" alt="Gamification">
                     <h2 class="serviceTitle">GAMIFICATION</h2>
                     <p class="textService">
                         Use of game elements (points, challenges, rewards) 
@@ -256,13 +184,16 @@
         <h5 class="miniTxt2">Porto Ferreira - SP</h5>
 
         <img class="contactBase"  src="./IMG/Group 22.png" alt="imgForm">
-        <form>
-            <input class="formsInfo" id="firstInput" type="text" placeholder="Name">
-            <input class="formsInfo" type="text" placeholder="E-mail">
-            <textarea name="msg" id="cMessage" cols="3" rows="5" placeholder="Message"></textarea>
+        <form id="contactForm">
+            <input class="formsInfo" id="firstInput" type="text" name="name" placeholder="Name" required>
+            <input class="formsInfo" type="text" name="email" placeholder="E-mail" required>
+            <textarea name="msg" id="cMessage" cols="3" rows="5" placeholder="Message" required></textarea>
             <img src="./IMG/MolduraSend.png" id="molduraSend" alt="Moldura">
             <button class="btnEnv"><img id="imgEnv" src="./IMG/Email Send.png" alt="email send"> S E N D</button>
         </form>
+        <div id="messageBoxOk">
+            <span id="messageTextBoxOk"></span>
+        </div>
     </div>
     <script src="JS/script.js"></script>
 </body>

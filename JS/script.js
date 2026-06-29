@@ -24,7 +24,72 @@ const infoTitle = document.getElementById("infoTitle");
 const infoText = document.getElementById("infoText");
 const projectsContainer = document.getElementById("projectsContainer");
 const projectTitle = document.getElementById("projectTitle");
+const githubButtonContainer = document.getElementById("githubButtonContainer")
 
+// KNOWLEDGE
+
+const skillsData = [
+  { name: "HTML", color: "#E34F26", level: 90, img: "./IMG/HTML LOGO.png" },
+  { name: "CSS", color: "#1572B6", level: 85, img: "../IMG/CSS LOGO.png" },
+  { name: "JavaScript", color: "#F7DF1E", level: 80, img: "./IMG/JS LOGO.png" },
+  { name: "Node.js", color: "#3C873A", level: 70, img: "./IMG/NODE LOGO.png" },
+  { name: "React Native", color: "#61DAFB", level: 75, img: "./IMG/REACT LOGO.png" },
+  { name: "Figma", color: "#F24E1E", level: 85, img: "./IMG/FIGMA LOGO.png" },
+  { name: "After Effects", color: "#7A7FFF", level: 60, img: "./IMG/AE LOGO.png" },
+  { name: "Premiere", color: "#E66BFF", level: 60, img: "./IMG/PR LOGO.png" },
+  { name: "Illustrator", color: "#FF9A00", level: 70, img: "./IMG/AI LOGO.png" },
+  { name: "Photoshop", color: "#31A8FF", level: 80, img: "./IMG/PS LOGO.png" }
+];
+
+const container = document.getElementById("knowColumns");
+
+
+function showSkills(){
+
+    container.innerHTML = "";
+
+    skillsData.forEach(skill => {
+        const item = document.createElement("div");
+        item.classList.add("know");
+        item.style.setProperty("--color", skill.color);
+
+        item.innerHTML = `
+        <img class="logoK" src="${skill.img}" alt="${skill.name}">
+            <div class="tecskills">
+                <p class="percent">${skill.level}%</p>
+                <div class="skills" data-level="${skill.level}">
+                    <div class="skillsFill"></div>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(item);
+    });
+
+}
+
+function animateSkills(){
+const skills = document.querySelectorAll(".skills");
+
+skills.forEach(skill => {
+    const fill = skill.querySelector(".skillsFill");
+
+    const level = skill.dataset.level;
+
+    setTimeout(()=> {
+        fill.style.width = level + "%";
+    },300);
+})
+}
+
+showSkills();
+animateSkills();
+
+
+
+
+
+// RESUME 
 const checkpoints = [
     {
         position: 600,
@@ -36,13 +101,13 @@ const checkpoints = [
         }, 
         title: {
             pt:"Instrutor de Formação Profissional III",
-            en:"Vocational Training Instructor III"}
-            ,
-        desc: {
-            pt: "Ministrar formação prática em desenvolvimento de software, desenvolvimento web/mobile e banco de dados, além de design criativo e produção multimídia. O conteúdo abrange fundamentos de programação e desenvolvimento full-stack, ferramentas Adobe Creative Cloud (Photoshop, Illustrator, Premiere Pro e After Effects), gamificação com JavaScript para criar experiências interativas de aprendizado e design UI/UX com Figma para wireframing, prototipagem e sistemas de design. Fomentar um ambiente colaborativo baseado em projetos, adaptar o ensino às diferentes necessidades dos alunos e prepará-los para certificações da indústria e para o sucesso profissional.",
-            en:"Deliver hands-on vocational training in software development, web/mobile development, and database management, alongside creative design and multimedia production. Instruction covers programming fundamentals and full-stack development, Adobe Creative Cloud tools including Photoshop, Illustrator, Premiere Pro, and After Effects, gamification using JavaScript to create interactive learning experiences, and UI/UX design with Figma for wireframing, prototyping, and design systems. Foster a project-based, collaborative learning environment, adapt instruction to diverse student needs, and prepare learners for industry certifications and career success."
-        }
+            en:"Vocational Training Instructor III"
         },
+        desc: {
+            pt: "Ministrei formação prática em desenvolvimento de software, web/mobile e banco de dados, além de design e multimídia com Adobe Creative Cloud (Photoshop, Illustrator, Premiere e After Effects). Ensinei gamificação com JavaScript para experiências interativas e UI/UX no Figma para wireframing e prototipagem. Fomentei ambiente colaborativo com projetos reais, adaptei o ensino às necessidades dos alunos e os preparei para certificações e o mercado de tecnologia.",
+            en: "Delivered hands-on training in software development, web/mobile, databases, and multimedia design using Adobe Creative Cloud (Photoshop, Illustrator, Premiere, After Effects). Taught gamification with JavaScript for interactive experiences and UI/UX in Figma for wireframing and prototyping. Fostered collaborative project-based learning, adapted to student needs, and prepared them for certifications and the tech job market."
+        }
+    },
     {
         position: 1000,
         image: "./img/senacLogo.png",
@@ -56,9 +121,9 @@ const checkpoints = [
             en:"Instructor – Information Technology Assistant Course"
             },
         desc: {
-            pt:"Ministrar formação abrangente em fundamentos de TI, abrangendo sistemas operacionais cliente, suítes de produtividade de escritório e operação de periféricos. Oferecer instrução prática em montagem e manutenção de hardware, instalação e configuração de sistemas operacionais cliente, softwares aplicativos e periféricos. Ensinar configuração e administração básica de rede local (LAN), incluindo endereçamento IP, cabeamento e compartilhamento de recursos em rede. Orientar os alunos em um Projeto Integrador que sintetiza todo o conteúdo do curso em uma aplicação prática e real, desenvolvendo habilidades de resolução de problemas, trabalho em equipe e documentação técnica. Adaptar os métodos de ensino aos diferentes estilos de aprendizagem e preparar os alunos para funções de suporte de TI de nível inicial e para certificações reconhecidas pelo mercado.",
-            en:"Deliver comprehensive training in IT fundamentals, covering client operating systems, office productivity suites, and peripheral device operation. Provide hands-on instruction in hardware assembly and troubleshooting, installation and configuration of client operating systems, software applications, and peripherals. Teach local area network (LAN) setup, configuration, and basic administration, including IP addressing, cabling, and network resource sharing. Guide students through an Integrative Project that synthesizes all course content into a practical, real-world application, fostering problem-solving, teamwork, and technical documentation skills. Adapt teaching methods to diverse learning styles and prepare students for entry-level IT support roles and industry-recognized certifications." 
-              }
+            pt:"Ensinei fundamentos de TI: sistemas operacionais, pacote office, periféricos, montagem e manutenção de hardware, instalação/configuração de SO e softwares. Ministrei configuração de redes locais (LAN), abordando IP, cabeamento e compartilhamento de recursos. Orientei Projeto Integrador com aplicação prática, desenvolvendo resolução de problemas e documentação técnica. Preparei alunos para suporte de TI e certificações reconhecidas.",
+            en:"Taught IT fundamentals: operating systems, office suites, peripherals, hardware assembly and maintenance, OS and software installation/configuration. Instructed on LAN setup, IP addressing, cabling, and resource sharing. Guided students through an Integrative Project with practical application, developing problem-solving and technical documentation skills. Prepared students for entry-level IT support and industry-recognized certifications." 
+            }
         },
     {
         position: 1400,
@@ -73,9 +138,9 @@ const checkpoints = [
             en: "Computer Science Teaching Assistant"
         },
         desc: {
-            pt: "Atuar como suporte técnico e auxiliar pedagógico nos laboratórios de informática, garantindo o pleno funcionamento de todos os equipamentos e sistemas utilizados nas atividades de ensino. Responsável pela instalação e configuração de softwares e sistemas operacionais em estações de trabalho, além da execução de manutenção preventiva e corretiva em computadores e periféricos. Gerenciar a infraestrutura de quatro laboratórios de informática, abrangendo desde a montagem e organização física até a configuração e atualização contínua dos equipamentos. Administrar servidores locais, incluindo criação, configuração e manutenção de serviços de rede, controle de acesso e backups. Atuar também na instalação, configuração e manutenção de redes de internet, garantindo conectividade estável e segura para alunos e docentes. Colaborar com os instrutores no preparo dos ambientes para as aulas, solucionar problemas técnicos em tempo real e contribuir para a qualidade do processo de ensino-aprendizagem.",
-            en: "Provide technical support and pedagogical assistance across computer labs, ensuring full functionality of all equipment and systems used in instructional activities. Responsible for installing and configuring software applications and operating systems on workstations, as well as performing preventive and corrective maintenance on computers and peripherals. Manage the infrastructure of four computer labs, covering physical setup, organization, and continuous equipment updates. Administer local servers, including creation, configuration, and maintenance of network services, access control, and backups. Also handle the installation, configuration, and maintenance of internet networks, ensuring stable and secure connectivity for both students and faculty. Collaborate with instructors in preparing lab environments for classes, resolve technical issues in real time, and contribute to the overall quality of the teaching-learning process."
-        } 
+        pt: "Atuei como suporte técnico em 4 laboratórios de informática, instalando/configurando SO e softwares, executando manutenção preventiva e corretiva em computadores e periféricos. Administrei servidores locais, redes de internet e controle de acesso. Colaborei com instrutores na preparação de ambientes para aulas, solucionei problemas em tempo real e contribuí para a qualidade do ensino-aprendizagem.",
+        en: "Provided technical support across 4 computer labs, installing/configuring operating systems and software, performing preventive and corrective maintenance on computers and peripherals. Administered local servers, internet networks, and access control. Collaborated with instructors in preparing lab environments, resolved real-time technical issues, and contributed to the quality of the teaching-learning process."
+        }       
     },
     {
         position: 1550,
@@ -90,9 +155,9 @@ const checkpoints = [
             en: "Instructor"
         },
         desc: {
-            pt: "Ministrei aulas de HTML, CSS e PHP, iniciando com os fundamentos de criação de páginas HTML para estabelecer uma base sólida. Em seguida, avancei para a estilização visual com CSS, aprimorando o design e a experiência do usuário nas páginas web. Por fim, abordei a programação orientada a objetos em PHP e a integração com bancos de dados, capacitando os alunos a desenvolver aplicações web dinâmicas e completas.",
-            en: "Taught HTML, CSS, and PHP courses, starting with the fundamentals of creating HTML pages to build a solid foundation. Progressed to visual styling with CSS, enhancing web page design and user experience. Finally, covered object-oriented programming in PHP and database integration, enabling students to develop dynamic, full-featured web applications."
-        } 
+            pt: "Ministrei aulas de HTML, CSS e PHP, iniciando com fundamentos de criação de páginas HTML, avançando para estilização visual com CSS e design responsivo. Concluí com programação orientada a objetos em PHP e integração com bancos de dados. As aulas foram práticas com projetos progressivos que capacitaram os alunos a desenvolver aplicações web dinâmicas e completas para o mercado.",
+            en: "Taught HTML, CSS, and PHP, starting with HTML page creation fundamentals, advancing to visual styling with CSS and responsive design. Concluded with object-oriented programming in PHP and database integration. Classes were hands-on with progressive projects, enabling students to develop dynamic, full-featured web applications ready for the job market."
+        }
     },
     {
         position: 1800,
@@ -107,8 +172,8 @@ const checkpoints = [
             en: "Systems Analysis and Development Tutor"
         },
         desc: {
-            pt: "Atuei como tutor orientando alunos no curso de Análise e Desenvolvimento de Sistemas, oferecendo suporte pedagógico e técnico em disciplinas como programação, banco de dados, engenharia de software, análise de sistemas e desenvolvimento web/mobile. Auxiliei na compreensão de conceitos fundamentais e avançados, esclarecendo dúvidas, revisando exercícios práticos e apoiando a execução de projetos acadêmicos. Contribuí para o desenvolvimento de habilidades lógicas e de resolução de problemas, preparando os estudantes para os desafios do mercado de tecnologia.",
-            en: "Served as a tutor guiding students in the Systems Analysis and Development course, providing pedagogical and technical support in subjects such as programming, databases, software engineering, systems analysis, and web/mobile development. Assisted in understanding fundamental and advanced concepts, clarifying doubts, reviewing practical exercises, and supporting the execution of academic projects. Contributed to the development of logical thinking and problem-solving skills, preparing students for the challenges of the technology job market."
+            pt: "Atuei como tutor no curso de Análise e Desenvolvimento de Sistemas, oferecendo suporte em programação, banco de dados, engenharia de software, análise de sistemas e desenvolvimento web/mobile. Auxiliei na compreensão de conceitos, esclareci dúvidas, revisei exercícios e apoiei projetos acadêmicos. Desenvolvi habilidades lógicas e de resolução de problemas, preparando alunos para o mercado de tecnologia.",
+            en: "Served as tutor in the Systems Analysis and Development course, providing support in programming, databases, software engineering, systems analysis, and web/mobile development. Assisted with concept understanding, clarified doubts, reviewed exercises, and supported academic projects. Developed logical thinking and problem-solving skills, preparing students for the technology job market."
         }
     },
     {
@@ -124,9 +189,9 @@ const checkpoints = [
             en:"IT Technician"
         },
         desc: {
-            pt:"Atuei na área de suporte e manutenção de sistemas e infraestrutura de TI, realizando instalação e configuração de softwares e sistemas operacionais, manutenção preventiva e corretiva de computadores e periféricos, e gerenciamento de redes locais e servidores. Responsável pela administração de laboratórios de informática, garantindo o pleno funcionamento dos equipamentos para atividades educacionais e corporativas. Prestei suporte técnico presencial e remoto, diagnosticando e solucionando problemas com agilidade, além de orientar usuários no uso adequado das ferramentas tecnológicas.",
-            en:"Worked in the area of IT support and infrastructure maintenance, performing software and operating system installation and configuration, preventive and corrective maintenance on computers and peripherals, and managing local networks and servers. Responsible for administering computer labs, ensuring full equipment functionality for educational and corporate activities. Provided on-site and remote technical support, diagnosing and resolving issues efficiently, while also guiding users on the proper use of technological tools."
-        }  
+            pt: "Atuei em suporte e manutenção de TI, realizando instalação/configuração de SO e softwares, manutenção preventiva e corretiva de computadores e periféricos, gerenciamento de redes locais e servidores. Administrei laboratórios de informática, prestando suporte presencial e remoto, diagnosticando e solucionando problemas com agilidade, além de orientar usuários no uso de ferramentas tecnológicas.",
+            en: "Worked in IT support and maintenance, performing software and OS installation/configuration, preventive and corrective maintenance on computers and peripherals, and managing local networks and servers. Administered computer labs, providing on-site and remote support, diagnosing and resolving issues efficiently, while guiding users on the proper use of technological tools."
+        }
     },
     {
         position: 2600,
@@ -141,9 +206,9 @@ const checkpoints = [
             en: "Instructor"
         }, 
         desc: {
-            pt: "Ministrei cursos presenciais de design e desenvolvimento web, abordando ferramentas e tecnologias essenciais para a criação de conteúdos digitais. Lecionei disciplinas de Adobe Photoshop, para edição e tratamento de imagens; Adobe Illustrator, para criação de vetores e identidade visual; Macromedia/Adobe Flash, para animações e recursos interativos; e HTML, para estruturação e desenvolvimento de páginas web. As aulas foram planejadas com foco prático, estimulando a criatividade e a autonomia dos alunos por meio de projetos reais, exercícios progressivos e acompanhamento individualizado, preparando-os para atuar no mercado de design, publicidade e desenvolvimento web.",
-            en: "Taught in-person courses in design and web development, covering essential tools and technologies for digital content creation. Taught Adobe Photoshop for image editing and retouching, Adobe Illustrator for vector graphics and visual identity, Macromedia/Adobe Flash for animations and interactive content, and HTML for structuring and developing web pages. Lessons were planned with a hands-on approach, encouraging students' creativity and autonomy through real-world projects, progressive exercises, and individualized support, preparing them for careers in design, advertising, and web development."
-        }, 
+            pt: "Ministrei cursos presenciais de design e desenvolvimento web na Escola Evolua, lecionando Photoshop (edição de imagens), Illustrator (vetores e identidade visual), Flash (animações interativas) e HTML (estruturação de páginas). As aulas foram práticas com projetos reais, exercícios progressivos e acompanhamento individualizado, preparando alunos para carreiras em design, publicidade e desenvolvimento web.",
+            en: "Taught in-person design and web development courses at Escola Evolua, covering Photoshop (image editing), Illustrator (vector graphics and visual identity), Flash (interactive animations), and HTML (page structuring). Classes were hands-on with real-world projects, progressive exercises, and individualized support, preparing students for careers in design, advertising, and web development."
+        }
     },
     {
         position: 3000,
@@ -158,8 +223,8 @@ const checkpoints = [
             en: "Office Assistant"
         },
         desc: {
-            pt: "Atuei no suporte administrativo e operacional da instituição, auxiliando na rotina diária do escritório. Realizei atendimento ao público, presencial e telefônico, prestando informações e encaminhando demandas. Organizei e arquivei documentos, mantendo o controle e a atualização de cadastros e processos. Auxiliei na elaboração de planilhas, relatórios e correspondências, utilizando pacote office e ferramentas de gestão. Colaborei com a equipe na execução de tarefas administrativas, contribuindo para a eficiência e o bom andamento das atividades da associação",
-            en: "Atuei no suporte administrativo e operacional da instituição, auxiliando na rotina diária do escritório. Realizei atendimento ao público, presencial e telefônico, prestando informações e encaminhando demandas. Organizei e arquivei documentos, mantendo o controle e a atualização de cadastros e processos. Auxiliei na elaboração de planilhas, relatórios e correspondências, utilizando pacote office e ferramentas de gestão. Colaborei com a equipe na execução de tarefas administrativas, contribuindo para a eficiência e o bom andamento das atividades da associação"
+        pt: "Atuei no suporte administrativo da Associação Comercial, realizando atendimento ao público presencial e telefônico, organizando e arquivando documentos, mantendo cadastros atualizados, elaborando planilhas, relatórios e correspondências com pacote office. Colaborei com a equipe em tarefas administrativas, contribuindo para a eficiência e o bom andamento das atividades da instituição.",
+        en: "Provided administrative support at the Commercial Association, handling in-person and phone customer service, organizing and filing documents, updating records, and creating spreadsheets, reports, and correspondence using office tools. Collaborated with the team on administrative tasks, contributing to the efficiency and smooth operation of the institution's activities."
         }
     },
          {
@@ -232,7 +297,7 @@ const playerAnimation = {
 }
 
 // TEMPO DE PAUSA EM CADA CARD
-const showInfoPause = 1;
+const showInfoPause = 7500;
 
 // POSIÇÃO CENÁRIO
 const worldWidth = 3300; // Medida corrigida
@@ -332,9 +397,13 @@ function updatePlayerAnimation(){
 function showInfoCard(data){
     isShowingCard = true;
 
+    githubButtonContainer.style.display = "none";
+
     //limpa projetos antigos
     projectsContainer.innerHTML = data.title[language];
 if(data.projects){
+
+    githubButtonContainer.style.display = "flex";
     infoCompany.innerHTML = "";
     infoTitle.innerText = data.title[language];
     infoImg.style.display = "none";
@@ -399,3 +468,38 @@ function showProjects(projects){
     });
 }
 
+// FORM FUNCTION
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", async (e)=>{
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    await fetch(
+        "https://formspree.io/f/xgojzpdr",
+        {
+            method:"POST",
+            body:formData,
+            headers:{
+                "Accept":"application/json"
+            }
+        }
+    );
+
+    contactForm.reset();
+    showMessage("Message sent successfully");
+    playerState = "walk";
+})
+
+const messageBoxOk = document.getElementById("messageBoxOk");
+const messageTextBoxOk = document.getElementById("messageTextBoxOk");
+
+function showMessage(text){
+    messageTextBoxOk.innerText = text;
+    messageBoxOk.classList.add("show");
+
+    setTimeout(()=> {
+        messageBoxOk.classList.remove("show");
+    },3000);
+}

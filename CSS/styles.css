@@ -199,6 +199,7 @@ a{
     align-items: center;
     justify-content: center;
     width: 95vw;
+    height: 800px;
     flex-direction: row;
 }
 
@@ -211,8 +212,11 @@ a{
 #about {
     margin: 150px 0 0 100px;
     width: 500px;
-    height: 300px;
+    height: 400px;
+    padding: 15px;
     font-size: 26px;
+    border: 10px solid white;
+    border-radius: 5px;
     font-family: "Afacad Flux Thin";
     text-align: justify;
 }
@@ -227,36 +231,45 @@ a{
 
 
 /* KNOWLEDGE */
+
+
 #knowColumns {
     display: flex;
-    flex-direction: row;
+    height: 800px;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-.col1 {
-    width: 335px;
-    margin: 50px 0 0 100px;
-    display: flex;
-    flex-direction: column;
-}
-
-.col2{
-    width: 335px;
-     margin: 50px 0 0 500px;
-    display: flex;
-    flex-direction: column;
-
-}
 .know{
     display: flex;
     flex-direction: row;
     margin-top: 50px;
+    color: #00ffff;
 }
 
 .logoK {
     width: 100px;
     height: 100px;
+    transition: .3s ease;
+}
+
+.logoK:hover{
+    animation: floatMove 0.8s ease-in-out infinite alternate;
+    filter: drop-shadow(0px 0px 8px var(--color));
+}
+
+@keyframes floatMove {
+
+    0% {
+        transform: translateY(0px) translateX(0px) scale(1);
+    }
+
+    100% {
+        transform: translateY(1px) translateX(15px) scale(1.2);
+    }
+
 }
 
 .tecskills{
@@ -269,6 +282,13 @@ a{
     width: 200px;
     height: 5px;
     background-color: white;
+}
+
+.skillsFill {
+    width: 0%;
+    height: 100%;
+    background: var(--color);
+     transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .percent {
@@ -284,7 +304,7 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 100px;
     
 }
 
@@ -293,7 +313,7 @@ a{
     justify-content: center;
     align-items: center;
     width: 920px;
-    height: 600px;
+    height: 750px;
     border: 2px solid yellow;
     flex-wrap: wrap;
 }
@@ -312,14 +332,17 @@ a{
 
 .imgService{
     position: absolute;
-    width: 200px;
-    height: 50px;
-    margin-top: -20px;
+    width: 120px;
+    height: 120px;
+    margin-top: -75px;
+}
+
+.imgService:hover{
+    transform: scale(1.25);
 }
 
 .serviceTitle {
     color: black;
-
     margin-top: 50px;
 }
 
@@ -339,7 +362,6 @@ a{
     height: 570px;   
     background-color: #129CD5;
     border-radius: 50px 0 0 50px;
-    
 }
 
 .rightbox{
@@ -662,4 +684,28 @@ textarea::placeholder{
     width: 45px;
     height: 45px;
     margin: 0 10px 0 -20px;
+}
+
+#messageBoxOk{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 250px;
+    padding: 15px;
+    background: #000;
+    border: 3px solid white;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-30px);
+    pointer-events: none;
+    transition: .3s;
+    z-index: 9999;
+}
+
+
+#messageBoxOk.show{
+    opacity: 1;
+    transform: translateY(0);
 }
