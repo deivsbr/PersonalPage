@@ -1,4 +1,3 @@
-let language = "en";
 
 const world = document.getElementById("world");
 const player = document.getElementById("player");
@@ -25,6 +24,67 @@ const infoText = document.getElementById("infoText");
 const projectsContainer = document.getElementById("projectsContainer");
 const projectTitle = document.getElementById("projectTitle");
 const githubButtonContainer = document.getElementById("githubButtonContainer")
+
+
+
+const texts = {
+
+    pt: {
+        nav:{
+            home:"INÍCIO",
+            whoIam:"QUEM SOU EU",
+            knowledge:"CONHECIMENTOS",
+            services:"SERVIÇOS",
+            resume:"CURRÍCULO",
+            contact:"CONTATO"
+        },
+
+        home:{
+            hello:"Olá",
+            iam:"Eu sou",
+            name:"Deividi",
+            lastName:"Henrique",
+            web:"Desenvolvimento Web\\Design",
+            btnC:"Baixar CV"
+        },
+
+        about:{
+            title:"QUEM SOU EU",
+            text:`Olá, meu nome é Deividi.Sou formado em Ciência da Computação e pós-graduado em Engenharia de Software. Tenho mais de 10 anos de experiência trabalhando em escolas, ensinando e prestando suporte. Atualmente trabalho com projetos individuais, desenvolvimento web, prototipação, design, UI/UX, gamificação e edição de vídeo.`
+        },
+        contact:{
+            send: " E N V I A R"
+        }
+    },
+
+    en: {
+        nav:{
+            home:"HOME",
+            whoIam:"WHO I AM",
+            knowledge:"KNOWLEDGE",
+            services:"SERVICES",
+            resume:"RESUME",
+            contact:"CONTACT"
+        },
+
+        home:{
+            hello:"Hello",
+            iam:"I am",
+            name:"Deividi",
+            lastName:"Henrique",
+            web:"Web Development\\Web Design",
+            btnC:"Download CV"
+        },
+        about:{
+            title:"WHO I AM",
+            text:`Hello, my name is Deividi.I hold a degree in Computer Science and a postgraduate qualification in Software Engineering.I have over 10 years of experience working in schools, teaching and providing support. Currently, I work on individual projects, including website development, prototyping, design, UI/UX, gamification and video editing.`
+        },
+        contact:{
+            send: "S E N D"
+        }
+    }
+}
+
 
 // KNOWLEDGE
 
@@ -84,6 +144,73 @@ skills.forEach(skill => {
 
 showSkills();
 animateSkills();
+
+//SERVICES
+const servicesData = [
+    {
+        title:{
+            pt:"FRONT-END",
+            en:"FRONT-END"
+        },
+        text:{
+            pt:"Desenvolvimento de interfaces web utilizando HTML, CSS e JavaScript, focado em performance, responsividade e acessibilidade.",
+            en:"Web interface development using HTML, CSS, and JavaScript, focused on performance, responsiveness, and accessibility."
+        }
+    },
+    {
+        title:{
+            pt:"DESIGN UI/UX",
+            en:"UI/UX DESIGN"
+        },
+        text:{
+            pt:"Criação de interfaces focadas no usuário, prototipação e experiência intuitiva.",
+            en:"User-centered interface design, focused on usability, prototyping, and intuitive user experience."
+        }
+    },
+    {
+        title:{
+            pt:"EDIÇÃO DE VÍDEO",
+            en:"VIDEO EDITING"
+        },
+        text:{
+            pt:"Edição e produção de vídeos, incluindo cortes, transições, correção de cores e efeitos visuais usando Premiere e After Effects.",
+            en:"Video editing and production, including cuts, transitions, color correction and visual effects using Premiere and After Effects."
+        }
+    },
+    {
+        title:{
+            pt:"EDIÇÃO DE IMAGEM",
+            en:"IMAGE EDITING"
+        },
+        text:{
+            pt:"Tratamento e manipulação de imagens, incluindo cortes, ajustes e efeitos visuais.",
+            en:"Image editing and manipulation, including cropping, adjustments, and visual effects."
+        }
+    },
+    {
+        title:{
+            pt:"ARTE DIGITAL",
+            en:"DIGITAL ART"
+        },
+        text:{
+            pt:"Criação de artes digitais, vetores e pixel art para interfaces, jogos e elementos visuais.",
+            en:"Creation of digital art, vectors and pixel art for interfaces, games and visual elements."
+        }
+    },
+    {
+        title:{
+            pt:"GAMIFICAÇÃO",
+            en:"GAMIFICATION"
+        },
+        text:{
+            pt:"Uso de elementos de jogos como pontos, desafios e recompensas para tornar aplicações mais interativas.",
+            en:"Use of game elements such as points, challenges and rewards to make applications more interactive."
+        }
+    }
+];
+
+
+
 
 
 
@@ -503,3 +630,144 @@ function showMessage(text){
         messageBoxOk.classList.remove("show");
     },3000);
 }
+
+// CONTACT
+
+const contactData = {
+    title:{
+        pt:"Vamos trabalhar juntos?",
+        en:"Shall we work together?"
+    },
+    text:{
+        pt:"Entre em contato para criarmos nosso próximo grande projeto juntos.",
+        en:"Get in touch so we can create our next great project together."
+    },
+    name:{
+        pt:"Nome",
+        en:"Name"
+    },
+    email:{
+        pt:"E-mail",
+        en:"E-mail"
+    },
+    message:{
+        pt:"Mensagem",
+        en:"Message"
+    },
+    send:{
+        pt:"ENVIAR",
+        en:"SEND"
+    },
+    rights:{
+        pt:"Todos os direitos reservados.",
+        en:"All rights reserved."
+    }
+};
+
+// FUNÇÃO TROCA IDIOMAS
+
+
+// FUNÇÃO TROCA IDIOMA DO SERVICES 
+function changeServices(){
+     document.querySelectorAll(".box_service").forEach((card,index)=>{
+
+        const service = servicesData[index];
+        if(!service) return;
+
+        card.querySelector(".serviceTitle").innerText = service.title?.[language] ?? "";
+        card.querySelector(".textService").innerText = service.text?.[language] ?? "";
+    });
+}
+
+// FUNÇÃO TROCA IDIOMA DO CONTACT
+const msg = document.getElementById("msg");
+const littleMessage = document.getElementById("littleMessage");
+const cMessage = document.getElementById("cMessage");
+const rights = document.getElementById("rights");
+
+function changeContact(){
+    msg.innerText = contactData.title[language];
+    littleMessage.innerText = contactData.text[language];
+    rights.innerText = contactData.rights[language];
+    document.querySelector('input[name="name"]').placeholder = contactData.name[language];
+    document.querySelector('input[name="email"]').placeholder = contactData.email[language];
+    cMessage.placeholder = contactData.message[language];
+    document.querySelector(".btnEnv").innerText = contactData.send[language];   
+}
+
+
+// TOGGLE
+const options = document.querySelectorAll(".option");
+
+options.forEach(button =>{
+    button.addEventListener("click", ()=>{
+        language = button.innerText.toLowerCase();
+
+        changeLanguage();
+        changeServices();
+        changeContact();
+    })
+})
+
+//IDIOMA
+// LANGUAGE
+    let language = "en";
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    const toggle = document.getElementById('toggle');
+    const slider = document.getElementById('slider');
+    const btnEN = document.getElementById('btnEn');
+    const btnPT = document.getElementById('btnPt');
+
+    
+
+    function getText(path) {
+        return path.split(".").reduce((obj, key) => obj?.[key], texts[language]) ?? "";
+    }
+
+    function changeLanguage() {
+        document.querySelectorAll("[data-text]").forEach(element => {
+            element.innerText = getText(element.dataset.text);
+        });
+    }
+
+    function setLanguage(lang) {
+        language = lang;
+
+        const isPt = language === 'pt';
+
+        toggle.classList.toggle('pt', isPt);
+        slider.classList.toggle('pt', isPt);
+
+        btnEN.classList.toggle('active', !isPt);
+        btnPT.classList.toggle('active', isPt);
+
+        slider.innerText = isPt ? "pt" : "en";
+
+        if(isPt){
+            document.body.classList.add('light');
+        } else {
+            document.body.classList.remove('light');
+        }
+
+        changeLanguage();
+        changeServices();
+        changeContact();
+    }
+
+    // 🔥 EVENTS (estavam faltando)
+    btnEN.addEventListener('click', () => setLanguage('en'));
+    btnPT.addEventListener('click', () => setLanguage('pt'));
+
+    toggle.addEventListener('click', () => {
+        setLanguage(language === 'en' ? 'pt' : 'en');
+    });
+
+    // 🔥 INICIALIZAÇÃO (ESSENCIAL)
+    setLanguage(language);
+    
+});
+
+changeLanguage();
+

@@ -45,6 +45,74 @@ body{
     display: flex;
     font-family: "Afacad Flux Regular";
     flex-direction: column;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Links e elementos importantes */
+body.light a,
+body.light .navbar ul li a,
+body.light .subtitle,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light p {
+    color: #000000;
+}
+
+/* Botões */
+body.light .btnC,
+body.light .btnEnv {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+body.light .btnC:hover,
+body.light .btnEnv:hover {
+    background-color: #333333;
+}
+
+/* Inputs */
+body.light .formsInfo {
+    background-color: #f5f5f5;
+    color: #000000;
+    border: 1px solid #cccccc;
+}
+
+/* Progress bar no modo light */
+body.light .progress-bar {
+    background-color: #000000;
+}
+
+/* Cards de serviço no modo light */
+body.light .box_service {
+    background-color: #f5f5f5;
+    border: 1px solid #dddddd;
+}
+
+body.light .serviceTitle,
+body.light .textService {
+    color: #000000;
+}
+
+/* Texto do about no modo light */
+body.light #about {
+    border-color: #000000;
+    color: #000000;
+    text-align: justify;
+}
+
+body.light #name, body.light #iam{
+    color: #000000;
+}
+
+/* Nome com stroke no modo light */
+body.light #lastName {
+    -webkit-text-stroke: 4px #000000;
 }
 
 .progress-bar{
@@ -88,30 +156,45 @@ a{
 }
 
 .toggle{
+  margin-left:auto;
+  margin-top: 10px;
+  position: relative;
   display:flex;
-  width:120px;
-  height:40px;
-  background:#003b2f;
+  width:100px;
+  height:30px;
   border-radius:50px;
   border: 2px solid yellow;
-  
+  cursor: pointer;
+  background-image: url('../IMG/eua.png');
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.3s ease;
+}
+
+.toggle.pt {
+    background-image: url('../IMG/brasil.png');
 }
 
 /* slider */
 
-.slider{
+#slider{
     display: flex;
-  position:absolute;
-  width:36px;
-  height:36px;
-  background:black;
-  border-radius:50%;
-  top: 1px;
-  left:2px;
-  transition:0.3s;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: black;
+    transition: transform 0.3s ease;
 }
 
-/* botoes */
+#toggle.pt #slider {
+  transform: translateX(70px);
+}
 
 .option{
   flex:1;
@@ -119,11 +202,15 @@ a{
   border:none;
   background:none;
   color:white;
-  font-size:12px;
+  font-size:10px;
   cursor:pointer;
   z-index:2;
+  transition: color 0.3s;
 }
 
+.option.active {
+  color: white;
+}
 
 #hello{
     font-size: 80px;
@@ -681,9 +768,10 @@ textarea::placeholder{
 }
 
 #imgEnv{
+    position: absolute;
     width: 45px;
     height: 45px;
-    margin: 0 10px 0 -20px;
+    margin: 400px 0px 0 -125px;
 }
 
 #messageBoxOk{

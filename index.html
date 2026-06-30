@@ -11,51 +11,47 @@
     <div class="home">
         <div class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a data-text="nav.home" href="#home"></a></li>
                 <li>|</li>
-                <li><a href="#whoiam">Who I am</a></li>
+                <li><a data-text="nav.whoIam" href="#whoiam"></a></li>
                 <li>|</li>
-                <li><a href="#knowledge">Knowledge</a></li>
+                <li><a data-text="nav.knowledge" href="#knowledge"></a></li>
                 <li>|</li>
-                <li><a href="#services">Services</a></li>
+                <li><a data-text="nav.services" href="#services"></a></li>
                 <li>|</li>
-                <li><a href="#resume">Resume</a></li>
+                <li><a data-text="nav.resume" href="#resume"></a></li>
                 <li>|</li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a data-text="nav.contact" href="#contact"></a></li>
             </ul>
 
         <!-- TOGGLE -->
-         <div class="toggle">
-            <div class="slider"></div>
+         <div class="toggle" id="toggle">
+            <div id="slider"></div>
 
-            <button class="option active">EN</button>
-            <button class="option">PT</button>
+            <button class="option active" id="btnEn" data-lang="en"></button>
+            <button class="option" id="btnPt" data-lang="pt"></button>
          </div>
+        <!-- FIM DO TOGGLE -->
 
-        <h1 id="hello">Hello<span id="dot">.</span></h1>
-        <h2 id="whoiam"> <span id="t1">—</span><span id="t2">—</span> I`am <span id="name">Deividi</span></h2>
-        <h2 id="lastName">Henrique</h2>
-        <p id="web">Web Developmento\Web Design</p>
-        <button class="btnC">Download CV</button>
+        <h1 id="hello" data-text="home.hello"><span id="dot">.</span></h1>
+        <h2 id="whoiam"> 
+            <span id="t1">—</span>
+            <span id="t2">—</span>
+                <span data-text="home.iam" id="iam"></span>
+                <span id="name" data-text="home.name"></span>
+        </h2>
+        <h2 id="lastName" data-text="home.lastName"></h2>
+        <p id="web" data-text="home.web"></p>
+        <button class="btnC" data-text="home.btnC"></button>
         </div>
     </div>
     <!-- WHO I AM -->
     <div class="whoiam" id="whoiam2">
-        <h2 class="subtitle">WHO I AM</h2>
+        <h2 class="subtitle" data-text="nav.whoIam"></h2>
         <hr class="progress-bar">
         <div class="aboutme_photo">
             
-        <h3 id="about">
-            Hello, my name is Deividi. 
-            I hold a degree in Computer Science 
-            and a postgraduate qualification in 
-            Software Engineering. I have over 10 
-            years of experience working in schools, 
-            teaching and providing support. Currently, 
-            I work on individual projects, including 
-            website development, prototyping, design, 
-            UI/UX, gamification, and video editing.
-        </h3>
+        <h3 id="about" data-text="about.text"></h3>
         <div id="myphoto">
 
         </div>
@@ -64,7 +60,7 @@
     </div>
     <!-- KNOWLEDGE -->
     <div class="knowledge" id="knowledge">
-        <h2 class="subtitle">KNOWLEDGE</h2>
+        <h2 class="subtitle" data-text="nav.knowledge"></h2>
         <div class="progress-bar"></div>
         <div id="knowColumns">
         </div>
@@ -73,58 +69,40 @@
     
     <!-- SERVICES -->
     <div class="services" id="services">
-        <h2 class="subtitle">SERVICES</h2>
+        <h2 class="subtitle" data-text="nav.services"></h2>
         <div class="progress-bar"></div>
         <div class="main-service">
         <div class="leftbox"></div>
         <div id="allservicesbox">
             <div class="box_service">
                 <img class="imgService" src="./IMG/frontEnd.png" alt="Front-end">
-                    <h2 class="serviceTitle">FRONT-END</h2>
-                    <p class="textService">Web interface development using HTML, CSS, and JavaScript, 
-                        focused on performance, responsiveness, and accessibility.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
             <div class="box_service">
                 <img class="imgService" src="./IMG/uiux.png" alt="UI/UX">
-                    <h2 class="serviceTitle">UI/UX DESIGN</h2>
-                    <p class="textService">
-                        User-centered interface design, focused on usability, 
-                        prototyping, and intuitive user experience.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
             <div class="box_service">
                 <img class="imgService" src="./IMG/videoEditing.png" alt="Video Editing">
-                    <h2 class="serviceTitle">VIDEO EDITING</h2>
-                    <p class="textService">
-                        Video editing and production, including cuts, transitions, and color correction, 
-                        primarily using Adobe Premiere Pro for editing and Adobe After Effects for 
-                        visual effects, animations, and advanced compositing.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
             <div class="box_service">
                 <img class="imgService" src="./IMG/digitalArt.png" alt="Digital Art">
-                    <h2 class="serviceTitle">IMAGE EDITING</h2>
-                    <p class="textService">
-                        Image editing and manipulation, including cropping, 
-                        adjustments, and visual effects.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
             <div class="box_service">
                 <img class="imgService" src="./IMG/imageEditing.png" alt="Image Editing">
-                    <h2 class="serviceTitle">DIGITAL ART</h2>
-                    <p class="textService">
-                        Creation of vector and pixel art digital assets for interfaces, 
-                        games, and visual elements.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
             <div class="box_service">
                 <img class="imgService" src="./IMG/gamification.png" alt="Gamification">
-                    <h2 class="serviceTitle">GAMIFICATION</h2>
-                    <p class="textService">
-                        Use of game elements (points, challenges, rewards) 
-                        to make applications more interactive and engaging.
-                    </p> 
+                    <h2 class="serviceTitle" data-text="title"></h2>
+                    <p class="textService" data-text="text"></p> 
             </div>
         </div> 
         <div class="rightbox"></div>
@@ -132,7 +110,7 @@
     </div>
     <!-- RESUME -->
     <div class="resume" id="resume">
-        <h2 class="subtitle">RESUME</h2>
+        <h2 class="subtitle" data-text="nav.resume"></h2>
         <div class="progress-bar"></div>
         <div id="viewport">
             <div id="world">
@@ -164,12 +142,10 @@
     </div>
     <!-- CONTACT -->
     <div class="contact" id="contact">
-        <h2 class="subtitle">CONTACT</h2>
+        <h2 class="subtitle" data-text="nav.contact"></h2>
         <div class="progress-bar"></div>
-        <h2 id="msg">Shall we work together?</h2>
-        <p id="littleMessage">"Get in touch so we can create our next great
-            project together."
-        </p>
+        <h2 id="msg" data-text="title"></h2>
+        <p id="littleMessage" data-text="text"></p>
 
         <div class="socialMedia">
             <ul>
@@ -180,7 +156,7 @@
             </ul>
         </div>
         <hr id="especialhr">
-        <h5 class="miniTxt"><span id="d26">2026 Deividi Henrique de Souza.</span> Todos os direitos reservados.</h5>
+        <h5 class="miniTxt"><span id="d26">2026 Deividi Henrique de Souza.</span><span  id="rights"></span></h5>
         <h5 class="miniTxt2">Porto Ferreira - SP</h5>
 
         <img class="contactBase"  src="./IMG/Group 22.png" alt="imgForm">
@@ -189,12 +165,13 @@
             <input class="formsInfo" type="text" name="email" placeholder="E-mail" required>
             <textarea name="msg" id="cMessage" cols="3" rows="5" placeholder="Message" required></textarea>
             <img src="./IMG/MolduraSend.png" id="molduraSend" alt="Moldura">
-            <button class="btnEnv"><img id="imgEnv" src="./IMG/Email Send.png" alt="email send"> S E N D</button>
+            <img id="imgEnv" src="./IMG/emailSend.png" alt="email send">
+            <button class="btnEnv" data-text="contact.send"></button>
         </form>
         <div id="messageBoxOk">
             <span id="messageTextBoxOk"></span>
         </div>
     </div>
-    <script src="JS/script.js"></script>
+    <script src="JS/script.js" defer></script>
 </body>
 </html>
