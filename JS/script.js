@@ -14,6 +14,9 @@ let playerState = "idle";
 let currentCheckpoint = 0;
 let isShowingCard = false;
 
+//TEMAS
+let theme = "light";
+
 //VARIAVEIS DOS CARDS
 const infoCard = document.getElementById("infoCard");
 const infoImg = document.getElementById("infoImg");
@@ -89,32 +92,71 @@ const texts = {
 // KNOWLEDGE
 
 const skillsData = [
-  { name: "HTML", color: "#E34F26", level: 90, img: "./IMG/HTML LOGO.png" },
-  { name: "CSS", color: "#1572B6", level: 85, img: "../IMG/CSS LOGO.png" },
-  { name: "JavaScript", color: "#F7DF1E", level: 80, img: "./IMG/JS LOGO.png" },
-  { name: "Node.js", color: "#3C873A", level: 70, img: "./IMG/NODE LOGO.png" },
-  { name: "React Native", color: "#61DAFB", level: 75, img: "./IMG/REACT LOGO.png" },
-  { name: "Figma", color: "#F24E1E", level: 85, img: "./IMG/FIGMA LOGO.png" },
-  { name: "After Effects", color: "#7A7FFF", level: 60, img: "./IMG/AE LOGO.png" },
-  { name: "Premiere", color: "#E66BFF", level: 60, img: "./IMG/PR LOGO.png" },
-  { name: "Illustrator", color: "#FF9A00", level: 70, img: "./IMG/AI LOGO.png" },
-  { name: "Photoshop", color: "#31A8FF", level: 80, img: "./IMG/PS LOGO.png" }
+  { name: "HTML", color: "#E34F26", level: 90, img: {
+    dark: "../IMG/html_whiteLogo.png",
+    light:  "../IMG/html_blackLogo.png"
+  }
+},
+  { name: "CSS", color: "#1572B6", level: 85, img: {
+    dark: "../IMG/css_whiteLogo.png",
+    light:"../IMG/css_blackLogo.png"
+  }  
+},
+  { name: "JavaScript", color: "#F7DF1E", level: 80, img: {
+    dark: "../IMG/js_whiteLogo.png",
+    light: "../IMG/js_blackLogo.png"
+  }
+},
+  { name: "Node.js", color: "#3C873A", level: 70, img: {
+    dark: "../IMG/node_whiteLogo.png",
+    light: "../IMG/node_blackLogo.png"
+  }
+},
+  { name: "React Native", color: "#61DAFB", level: 75, img: {
+    dark:"../IMG/react_whiteLogo.png",
+    light: "../IMG/react_blackLogo.png" 
+  }
+},
+  { name: "Figma", color: "#F24E1E", level: 85, img: {
+    dark: "../IMG/figma_whiteLogo.png",
+    light: "../IMG/figma_blackLogo.png"
+  }
+},
+  { name: "After Effects", color: "#7A7FFF", level: 60, img: {
+    dark: "../IMG/ae_whiteLogo.png",
+    light: "../IMG/ae_blackLogo.png"
+  }  
+},
+  { name: "Premiere", color: "#E66BFF", level: 60, img: {
+    dark: "../IMG/pr_whiteLogo.png" ,
+    light: "../IMG/pr_blackLogo.png"
+  }  
+},
+  { name: "Illustrator", color: "#FF9A00", level: 70, img: {
+    dark: "../IMG/ai_whiteLogo.png",
+    light: "../IMG/ai_blackLogo.png"
+  }  
+},
+  { name: "Photoshop", color: "#31A8FF", level: 80, img: {
+    dark: "../IMG/ps_whiteLogo.png",
+    light: "../IMG/ps_blackLogo.png" 
+  }
+}
 ];
 
-const container = document.getElementById("knowColumns");
 
 
 function showSkills(){
 
+    const container = document.getElementById("knowColumns");
+    
     container.innerHTML = "";
 
     skillsData.forEach(skill => {
         const item = document.createElement("div");
         item.classList.add("know");
-        item.style.setProperty("--color", skill.color);
-
         item.innerHTML = `
-        <img class="logoK" src="${skill.img}" alt="${skill.name}">
+        <img class="logoK" src="${skill.img[theme]}" alt="${skill.name}">
             <div class="tecskills">
                 <p class="percent">${skill.level}%</p>
                 <div class="skills" data-level="${skill.level}">
@@ -122,6 +164,12 @@ function showSkills(){
                 </div>
             </div>
         `;
+        item.style.setProperty("--color", skill.color);
+        const fill = item.querySelector(".skillsFill");
+
+        setTimeout(()=>{
+            fill.style.width = skill.level + "%";
+        }, 200);
 
         container.appendChild(item);
     });
@@ -696,6 +744,18 @@ function changeContact(){
 }
 
 
+function changeSkillsImages(){
+    showSkills();
+    animateSkills();
+}
+
+
+function changeThemeImages(){
+    document.querySelectorAll(".theme-img").forEach(img =>{
+        img.src = img.dataset[theme];
+    })
+}
+
 // TOGGLE
 const options = document.querySelectorAll(".option");
 
@@ -735,6 +795,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function setLanguage(lang) {
         language = lang;
 
+        theme = lang === "pt" ? "light" : "dark";
+
         const isPt = language === 'pt';
 
         toggle.classList.toggle('pt', isPt);
@@ -754,6 +816,8 @@ document.addEventListener('DOMContentLoaded', function() {
         changeLanguage();
         changeServices();
         changeContact();
+        showSkills();
+        changeThemeImages();
     }
 
     // 🔥 EVENTS (estavam faltando)

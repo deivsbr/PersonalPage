@@ -36,7 +36,7 @@
     margin: 0;
     padding: 0;
     color: white;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 
 }
 
@@ -65,54 +65,74 @@ body.light p {
 }
 
 /* Botões */
-body.light .btnC,
+body.light .btnC{
+    background-color: #000;
+    color: #fff;
+}
 body.light .btnEnv {
-    background-color: #000000;
-    color: #ffffff;
+    border: 2px solid red;
 }
 
-body.light .btnC:hover,
-body.light .btnEnv:hover {
-    background-color: #333333;
-}
+
 
 /* Inputs */
 body.light .formsInfo {
     background-color: #f5f5f5;
     color: #000000;
-    border: 1px solid #cccccc;
 }
 
-/* Progress bar no modo light */
+body.light #cMessage {
+    background-color: #f5f5f5;
+    color: #000000;
+    
+}
+
+body.light #molduraSend {
+    color: #000000;
+}
+
+body.light .btnEnv {
+    background-color: transparent;
+    border: none;
+    color: #000;
+}
+
 body.light .progress-bar {
     background-color: #000000;
 }
 
-/* Cards de serviço no modo light */
 body.light .box_service {
-    background-color: #f5f5f5;
-    border: 1px solid #dddddd;
+    background-color: #000;
+    color: white;
 }
 
 body.light .serviceTitle,
 body.light .textService {
-    color: #000000;
+    color: #fff;
 }
 
-/* Texto do about no modo light */
 body.light #about {
     border-color: #000000;
     color: #000000;
-    text-align: justify;
 }
 
 body.light #name, body.light #iam{
     color: #000000;
 }
 
-/* Nome com stroke no modo light */
 body.light #lastName {
     -webkit-text-stroke: 4px #000000;
+}
+
+body.light #especialhr{
+    background-color: #000000;
+}
+
+body.light .miniTxt, 
+body.light .miniTxt2, 
+body.light #d26,
+body.light #rights {
+    color: #000;
 }
 
 .progress-bar{
@@ -131,7 +151,8 @@ body.light #lastName {
 /* MENU */
 
 .navbar {
-    margin: 20px;
+    margin-top: 20px;
+    margin-right: 40px;
     color: white;
     font-size: 1.125em;
     text-transform: uppercase;
@@ -157,13 +178,13 @@ a{
 
 .toggle{
   margin-left:auto;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
   position: relative;
   display:flex;
   width:100px;
   height:30px;
   border-radius:50px;
-  border: 2px solid yellow;
   cursor: pointer;
   background-image: url('../IMG/eua.png');
   background-size: cover;
@@ -399,9 +420,9 @@ a{
     display:flex;
     justify-content: center;
     align-items: center;
-    width: 920px;
+    width: 1100px;
     height: 750px;
-    border: 2px solid yellow;
+    border-radius: 20px;
     flex-wrap: wrap;
 }
 
@@ -639,6 +660,12 @@ a{
 }
 
 /* CONTACT */
+.contact{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
 #msg{
     width: 500px;
     margin: 150px 0 0 100px;
@@ -706,7 +733,7 @@ a{
     position: absolute;
     width: 600px;
     height: 600px;
-    margin: -680px 0 0 750px;
+    margin: 170px 0 0 1250px;
 }
 
 #firstInput{
@@ -764,14 +791,15 @@ textarea::placeholder{
     align-items: center;
     font-family: "Anta";
     background-color: transparent;
+    border: none;
     color: none;
 }
 
 #imgEnv{
     position: absolute;
-    width: 45px;
-    height: 45px;
-    margin: 400px 0px 0 -125px;
+    width: 30px;
+    height: 30px;
+    margin: 400px 0px 0 -110px;
 }
 
 #messageBoxOk{
