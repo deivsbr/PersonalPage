@@ -26,9 +26,31 @@ const infoTitle = document.getElementById("infoTitle");
 const infoText = document.getElementById("infoText");
 const projectsContainer = document.getElementById("projectsContainer");
 const projectTitle = document.getElementById("projectTitle");
-const githubButtonContainer = document.getElementById("githubButtonContainer")
+const portfolioButtons = document.getElementById("portfolioButtons");
+const githubBtn = document.getElementById("enterGithub");
+const behanceBtn = document.getElementById("enterBehance");
+const youtubeBtn = document.getElementById("enterYoutube");
+const closeProjects = document.getElementById("closeProjects");
 
+function downloadPDF(){
+    const lang = language;
+    let filePDF;
+    let fileName;
 
+    if(lang === 'pt') {
+        filePDF = './DOCS/cv_pt.pdf';
+        fileName = 'cv_pt.pdf'
+    } else {
+        filePDF = './DOCS/cv_en.pdf';
+        fileName = 'cv_en.pdf'
+    }
+    const link = document.createElement('a');
+    link.href = filePDF;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
 const texts = {
 
@@ -265,6 +287,22 @@ const servicesData = [
 
 
 // RESUME 
+
+//AUDIO RESUME
+const audio = new Audio("./SOUND/Music2.mp3");
+audio.loop = true;
+audio.volume = 0.2;
+
+function playMusic(){
+    audio.play();
+}
+
+function stopMusic(){
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+
 const checkpoints = [
     {
         position: 600,
@@ -514,6 +552,7 @@ buttonPlay.addEventListener("click", ()=>{
     gameStarted = true;
     playerState = "walk";
     buttonPlay.style.display = "none";
+    playMusic();
 })
 
 // INICIA O GAME
@@ -568,23 +607,28 @@ startIdle();
 function updatePlayerAnimation(){
 }
 
+
+
 //MOSTRA O CARD NO RESUME
 function showInfoCard(data){
     isShowingCard = true;
-
-    githubButtonContainer.style.display = "none";
+    closeProjects.style.display = "none";
+    portfolioButtons.style.display = "none";
 
     //limpa projetos antigos
     projectsContainer.innerHTML = data.title[language];
 if(data.projects){
 
-    githubButtonContainer.style.display = "flex";
+    portfolioButtons.style.display = "flex";
+    closeProjects.style.display = "block";
     infoCompany.innerHTML = "";
     infoTitle.innerText = data.title[language];
     infoImg.style.display = "none";
     infoText.style.display = "none";
     infoYears.style.display = "none";
+
     showProjects(data.projects);
+    stopMusic();
 
 } else {
     infoImg.style.display = "block";
@@ -620,6 +664,9 @@ function hideInfoCard(){
         currentCheckpoint++;
     }, 600);
 }
+
+//FECHA O CARD PROJECTS
+closeProjects.addEventListener("click", hideInfoCard);
 
 // CARD PROJECTS
 function showProjects(projects){

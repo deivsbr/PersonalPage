@@ -42,7 +42,9 @@
         </h2>
         <h2 id="lastName" data-text="home.lastName"></h2>
         <p id="web" data-text="home.web"></p>
-        <button class="btnC" data-text="home.btnC"></button>
+        <button class="btnC" data-text="home.btnC" onclick="downloadPDF()"></button>
+
+        <img src="./IMG/PhotoHome.png" alt="Me" id="dHome">
         </div>
     </div>
     <!-- WHO I AM -->
@@ -52,9 +54,7 @@
         <div class="aboutme_photo">
             
         <h3 id="about" data-text="about.text"></h3>
-        <div id="myphoto">
-
-        </div>
+        <img src="./IMG/PhotoWhoIam.png" id="myphoto">
 
         </div>
     </div>
@@ -123,6 +123,7 @@
        </button>
        <!-- INICIO DOS CARDS -->
         <div id="infoCard" class="info-card hidden">
+            <button id="closeProjects">X</button>
             <div class="info-content">
                 <img id="infoImg" src="" alt="">
                 <h3 id="infoYears"></h3>
@@ -131,9 +132,13 @@
                 <p id="infoText"></p>
                 <h2 id="projectTitle"></h2>
                 <div id="projectsContainer"></div>
-                <div id="githubButtonContainer">
-                <a href="https://github.com/deivsbr" target="_blank" id="githubButton">
-                [ENTER GITHUB]</a>
+                <div id="portfolioButtons">
+                <a href="https://github.com/deivsbr" target="_blank" id="enterGithub">
+                [GITHUB]</a>
+                <a href="https://github.com/deivsbr" target="_blank" id="enterBehance">
+                [BEHANCE]</a>
+                <a href="https://github.com/deivsbr" target="_blank" id="enterYoutube">
+                [YOUTUBE]</a>
                 </div>
             </div>
         </div>
