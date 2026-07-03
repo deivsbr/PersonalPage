@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello, I`m Deividi Henrique</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <!-- Favicon padrão -->
+<!-- Apenas o essencial -->
+<link rel="icon" type="image/png" href="./IMG/favicon96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="./IMG/favicon.svg" />
+<link rel="icon" href="./IMG/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="./IMG/apple-touch-icon.png" />
+<link rel="manifest" href="./IMG/web-app-manifest-192x192.png">
+
+
 </head>
 <body>
+     <!-- VOLTAR PARA HOME -->
+         <a href="index.html" class="floating-home">↑</a>
+
     <!-- HOME -->
-    <div class="home">
+    <div class="home observer" id="home">
         <div class="navbar">
             <ul>
                 <li><a data-text="nav.home" href="#home"></a></li>
                 <li>|</li>
-                <li><a data-text="nav.whoIam" href="#whoiam"></a></li>
+                <li><a data-text="nav.whoIam" href="#whoIam"></a></li>
                 <li>|</li>
                 <li><a data-text="nav.knowledge" href="#knowledge"></a></li>
                 <li>|</li>
@@ -33,8 +45,10 @@
          </div>
         <!-- FIM DO TOGGLE -->
 
-        <h1 id="hello" data-text="home.hello"><span id="dot">.</span></h1>
-        <h2 id="whoiam"> 
+       
+
+        <h1 id="hello" data-text="home.hello"></h1>
+        <h2 id="whoiamInfo"> 
             <span id="t1">—</span>
             <span id="t2">—</span>
                 <span data-text="home.iam" id="iam"></span>
@@ -48,7 +62,7 @@
         </div>
     </div>
     <!-- WHO I AM -->
-    <div class="whoiam" id="whoiam2">
+    <div class="whoiam observer" id="whoIam">
         <h2 class="subtitle" data-text="nav.whoIam"></h2>
         <hr class="progress-bar">
         <div class="aboutme_photo">
@@ -59,7 +73,7 @@
         </div>
     </div>
     <!-- KNOWLEDGE -->
-    <div class="knowledge" id="knowledge">
+    <div class="knowledge observer" id="knowledge">
         <h2 class="subtitle" data-text="nav.knowledge"></h2>
         <div class="progress-bar"></div>
         <div id="knowColumns">
@@ -68,7 +82,7 @@
 
     
     <!-- SERVICES -->
-    <div class="services" id="services">
+    <div class="services observer" id="services">
         <h2 class="subtitle" data-text="nav.services"></h2>
         <div class="progress-bar"></div>
         <div class="main-service">
@@ -109,18 +123,23 @@
         </div>
     </div>
     <!-- RESUME -->
-    <div class="resume" id="resume">
+    <div class="resume observer" id="resume">
         <h2 class="subtitle" data-text="nav.resume"></h2>
         <div class="progress-bar"></div>
         <div id="viewport">
             <div id="world">
-             <img id="fundoResume" src="./IMG/ResumeDark.png" alt="Cenário Dark">
+             
+             <img id="fundoResume" src="./IMG/FundoNovo.png" alt="Cenário Dark">
              <div id="player"></div>
         </div>
         </div>
-       <button id="start">
-            
-       </button>
+        <!-- MENSAGEM DE INICIO  -->
+        <div id="menuResume">
+        <h2 id="portfolio_exe">PORTFOLIO.EXE</h2>
+             <h4 id="welcomeResume">Welcome, Visitor.</h4>
+             <h4 id="initResume">Initializing Journey...</h4>
+       <button id="start"></button>
+       </div>
        <!-- INICIO DOS CARDS -->
         <div id="infoCard" class="info-card hidden">
             <button id="closeProjects">X</button>
@@ -135,9 +154,9 @@
                 <div id="portfolioButtons">
                 <a href="https://github.com/deivsbr" target="_blank" id="enterGithub">
                 [GITHUB]</a>
-                <a href="https://github.com/deivsbr" target="_blank" id="enterBehance">
+                <a href="https://www.behance.net/deivsbr" target="_blank" id="enterBehance">
                 [BEHANCE]</a>
-                <a href="https://github.com/deivsbr" target="_blank" id="enterYoutube">
+                <a href="https://www.youtube.com/@deivsbr" target="_blank" id="enterYoutube">
                 [YOUTUBE]</a>
                 </div>
             </div>
@@ -146,7 +165,7 @@
 
     </div>
     <!-- CONTACT -->
-    <div class="contact" id="contact">
+    <div class="contact observer" id="contact">
         <h2 class="subtitle" data-text="nav.contact"></h2>
         <div class="progress-bar"></div>
         <h2 id="msg" data-text="title"></h2>

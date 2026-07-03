@@ -1,8 +1,15 @@
 
 const world = document.getElementById("world");
 const player = document.getElementById("player");
-const buttonPlay = document.querySelector("#start");
 const viewport = document.getElementById("viewport");
+
+const menuResume = document.getElementById("menuResume");
+const porfolioExe = document.getElementById("portfolio_exe");
+const welcomeResume = document.getElementById("welcomeResume");
+const initResume = document.getElementById("initResume");
+const buttonPlay = document.querySelector("#start");
+
+
 
 //VARIAVEIS DO PERSONAGEM
 let gameStarted= false;
@@ -31,6 +38,30 @@ const githubBtn = document.getElementById("enterGithub");
 const behanceBtn = document.getElementById("enterBehance");
 const youtubeBtn = document.getElementById("enterYoutube");
 const closeProjects = document.getElementById("closeProjects");
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        switch(entry.target.id){
+            case "whoIam":
+                renderWhoIam();
+                break;
+            case "knowledge":
+                showSkills();
+                animateSkills();
+                break;
+        }
+        observer.unobserve(entry.target);
+    });
+
+},{
+    threshold:0.25
+});
+
+document.querySelectorAll(".observer").forEach(div=>{
+    observer.observe(div);
+});
 
 function downloadPDF(){
     const lang = language;
@@ -280,12 +311,6 @@ const servicesData = [
 ];
 
 
-
-
-
-
-
-
 // RESUME 
 
 //AUDIO RESUME
@@ -329,9 +354,9 @@ const checkpoints = [
             pt: "Jul/2024 - Out/2024  | Abr/2023 - Jul/2023 | Set/2022 - Dez/2022", 
             en: "July/2024 - Oct/2024  | Apr/2023 - July/2023 | Sep/2022 - Dec/2022"
         },
-            title: {
+        title: {
             pt:"Professor",
-            en:"Instructor – Information Technology Assistant Course"
+            en:"Instructor – Information Technology"
             },
         desc: {
             pt:"Ensinei fundamentos de TI: sistemas operacionais, pacote office, periféricos, montagem e manutenção de hardware, instalação/configuração de SO e softwares. Ministrei configuração de redes locais (LAN), abordando IP, cabeamento e compartilhamento de recursos. Orientei Projeto Integrador com aplicação prática, desenvolvendo resolução de problemas e documentação técnica. Preparei alunos para suporte de TI e certificações reconhecidas.",
@@ -489,6 +514,7 @@ const checkpointDistance = 50;
 // ESTADOS DO PERSONAGEM - IDLE, WALK AND SHOWINFO
 const playerAnimation = {
     idle:{
+        image:"./ASSETS/Idle.png",
         currentFrame:0,
         frameWidth:618,
         totalFrames:3,
@@ -496,16 +522,11 @@ const playerAnimation = {
     },
 
     walk:{
+        image:"./ASSETS/Walk.png",
         currentFrame:0,
         frameWidth:618,
-        totalFrames:3,
-        frameSpeed:200,
-    },
-    showInfo:{
-        currentFrame:0,
-        frameWidth:618,
-        totalFrames:3,
-        frameSpeed:200,
+        totalFrames:4,
+        frameSpeed:150,
     }
 }
 
@@ -519,7 +540,7 @@ const playerWidth = 80;
 
 // CONTROLE DO IDLE - AO MUDAR PARA O CONST PLAYERANIMATION - APAGAR
 let currentFrame = 0;
-let idleAnimation;
+
 
 
 // PLAY RESUME
@@ -550,8 +571,8 @@ setInterval(
 // EVENTO DE CLICK DO BUTTON
 buttonPlay.addEventListener("click", ()=>{
     gameStarted = true;
-    playerState = "walk";
-    buttonPlay.style.display = "none";
+    changePlayerState("walk");
+    menuResume.style.display = "none";
     playMusic();
 })
 
@@ -564,7 +585,7 @@ function gameLoop(){
         if(currentCheckpoint < checkpoints.length &&
             playerX >= checkpoints[currentCheckpoint].position - checkpointDistance &&
             !isShowingCard){
-                playerState = "showInfo";
+                changePlayerState("idle");
                 showInfoCard(checkpoints[currentCheckpoint]);
             }
     }
@@ -576,7 +597,7 @@ function gameLoop(){
 
         player.style.left = playerX + "px";
         world.style.transform = `translateX(${-cameraX}px)`;
-        console.log(playerX, playerState);
+        console.log(playerX, changePlayerState);
     }
     
     requestAnimationFrame(gameLoop);
@@ -584,39 +605,41 @@ function gameLoop(){
 gameLoop();
 
 
-// ANIMACÃO IDLE
-function startIdle(){
-    idleAnimation = setInterval(() => {
-        player.style.backgroundPosition = `-${currentFrame * playerAnimation.idle.frameWidth}px 0`;
+// ANIMACÃO 
+let animationInterval;
+
+function startAnimation(){
+
+    clearInterval(animationInterval);
+    currentFrame = 0;
+    const animation = playerAnimation[playerState];
+    animationInterval = setInterval(() => {
+        player.style.backgroundPosition =
+            `-${currentFrame * animation.frameWidth}px 0`;
         currentFrame++;
-        if(currentFrame >= playerAnimation.idle.totalFrames){
+        if(currentFrame >= animation.totalFrames){
             currentFrame = 0;
         }
-    }, playerAnimation.idle.frameSpeed);
+    }, animation.frameSpeed);
 }
-
-// PARAR IDLE
-function stopIdle(){
-    clearInterval(idleAnimation);
-}
-
-// INICIAR O PERSONAGEM
-startIdle();
 
 // TROCA AS SPRITESHEET DEPENDENDO O ESTADO DO PERSONAGEM
-function updatePlayerAnimation(){
+function changePlayerState(state){
+    if(playerState === state) return;
+    playerState = state;
+    player.style.backgroundImage = `url("${playerAnimation[state].image}")`;
+    startAnimation();
 }
 
-
+startAnimation();
 
 //MOSTRA O CARD NO RESUME
 function showInfoCard(data){
+    changePlayerState("idle");
     isShowingCard = true;
     closeProjects.style.display = "none";
     portfolioButtons.style.display = "none";
 
-    //limpa projetos antigos
-    projectsContainer.innerHTML = data.title[language];
 if(data.projects){
 
     portfolioButtons.style.display = "flex";
@@ -660,8 +683,8 @@ function hideInfoCard(){
     setTimeout(()=>{
         infoCard.classList.add("hidden");
         isShowingCard = false;
-        playerState = "walk";
         currentCheckpoint++;
+        changePlayerState("walk");
     }, 600);
 }
 
@@ -711,7 +734,7 @@ contactForm.addEventListener("submit", async (e)=>{
 
     contactForm.reset();
     showMessage("Message sent successfully");
-    playerState = "walk";
+    changePlayerState("walk");
 })
 
 const messageBoxOk = document.getElementById("messageBoxOk");
@@ -821,6 +844,7 @@ options.forEach(button =>{
     let language = "en";
 
 document.addEventListener('DOMContentLoaded', function() {
+    
 
     const toggle = document.getElementById('toggle');
     const slider = document.getElementById('slider');
@@ -837,6 +861,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll("[data-text]").forEach(element => {
             element.innerText = getText(element.dataset.text);
         });
+
     }
 
     function setLanguage(lang) {
@@ -881,4 +906,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 changeLanguage();
-

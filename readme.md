@@ -1,67 +1,94 @@
-# 🧑‍💻 Meu Portfólio Personalizado
+# 🎮 Pixel Portfolio
 
-![Badge de Status](https://img.shields.io/badge/status-live-brightgreen)
-![Badge de Responsivo](https://img.shields.io/badge/responsive-yes-success)
-![Badge de Acessibilidade](https://img.shields.io/badge/accessibility-WCAG_AA-orange)
-![Badge de Licença](https://img.shields.io/badge/license-MIT-blue)
+Um portfólio interativo desenvolvido com **HTML, CSS e JavaScript**, inspirado em jogos retrô de plataforma e pixel art.
 
-> Uma página web personalizada que combina design criativo com funcionalidades interativas para apresentar meu portfólio profissional de forma única e memorável.
-
-🔗 **Demo ao Vivo:** [https://seu-portfolio.com](https://seu-portfolio.com)
+Em vez de uma navegação tradicional, o visitante acompanha um personagem que percorre diferentes cenários enquanto apresenta informações, projetos, habilidades e experiências de forma dinâmica.
 
 ---
 
-## 📋 Índice
+## ✨ Demonstração
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [🎨 Design & Identidade Visual](#design--identidade-visual)
-- [✨ Funcionalidades](#funcionalidades)
-- [🛠️ Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [📸 Screenshots](#screenshots)
-- [🚀 Instalação Local](#instalação-local)
-- [🎯 Como Personalizar](#como-personalizar)
-- [📂 Estrutura do Projeto](#estrutura-do-projeto)
-- [🌐 Deploy](#deploy)
-- [🤝 Contribuição](#contribuição)
-- [📄 Licença](#licença)
-- [📧 Contato](#contato)
+> Adicione aqui um GIF ou imagem da tela inicial.
+
+```md
+![Preview](./assets/images/preview.gif)
+```
 
 ---
 
-## Sobre o Projeto
+## 🚀 Funcionalidades
 
-Este projeto é uma **página web personalizada** desenvolvida para ser mais que um simples currículo online. Ela foi criada para:
-
-- **Apresentar minha identidade profissional** de forma criativa e autêntica
-- **Destacar projetos e habilidades** com uma experiência visual imersiva
-- **Facilitar o contato** através de múltiplos canais integrados
-- **Demonstrar competências técnicas** através do próprio design e código
-
-### 🎯 Público-alvo
-- Recrutadores e headhunters
-- Potenciais clientes e parceiros
-- Comunidade tech e desenvolvedores
-- Qualquer pessoa interessada em meu trabalho
+* 🎮 Personagem com animação de caminhada
+* 🕹️ Navegação baseada em scroll
+* 📍 Sistema de paradas em cada seção
+* 🎨 Troca automática de sprites durante a movimentação
+* 🌄 Cenários em pixel art
+* ⚡ Carregamento otimizado das seções com `IntersectionObserver`
+* 📱 Layout responsivo
+* 🌐 Suporte para múltiplos idiomas
+* ✨ Animações suaves utilizando CSS e JavaScript
 
 ---
 
-## 🎨 Personagens
+## 🛠 Tecnologias
 
-### Personagens Disponíveis
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Intersection Observer API
+* Responsive Design
 
-| 01 | **Aria** | Fantasia | Guerreira elfa com armadura mística | ✅ |
+---
 
-### Galeria de Personagens
+## 🎯 Objetivo
 
-```markdown
+O projeto foi criado para transformar um portfólio tradicional em uma experiência interativa, aproximando conceitos de desenvolvimento web e design de jogos.
+
+Cada seção representa uma etapa da jornada do personagem, tornando a navegação mais envolvente e intuitiva.
+
+---
+
+## 📸 Galeria
+
+### Tela Inicial
+
+> Adicione uma imagem.
+
+### Seção Sobre
+
+> Adicione uma imagem.
+
+### Projetos
+
+> Adicione uma imagem.
+
+### Habilidades
+
+> Adicione uma imagem.
+
+---
+
+## ⚙️ Como executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
+```
+
+Entre na pasta:
+
+```bash
+cd seu-repositorio
+```
+
+Abra o arquivo `index.html` em seu navegador.
+
+> Como o projeto é totalmente desenvolvido com HTML, CSS e JavaScript puro, não é necessário instalar dependências.
+
+---
 
 
-## 🎨 Design & Identidade Visual
+## 📄 Licença
 
-### Paleta de Cores
-```css
---primary: #6C63FF      /* Roxo vibrante - energia e criatividade */
---secondary: #FF6584    /* Rosa - paixão e humanidade */
---dark: #1A1A2E        /* Azul escuro - elegância e profissionalismo */
---light: #F8F9FA       /* Branco suave - clean e moderno */
---accent: #FFD700      /* Dourado - destaque e premium */
+Este projeto está disponível para fins de estudo, inspiração e demonstração de desenvolvimento front-end.
