@@ -334,7 +334,7 @@ function stopMusic(){
 const checkpoints = [
     {
         position: 600,
-        image: "./img/senaiLogo.png",
+        image: "./IMG/senaiLogo.png",
         company:"SENAI",
         years: {
             pt: "Dez/2022 - Abr/2026",
@@ -351,7 +351,7 @@ const checkpoints = [
     },
     {
         position: 1000,
-        image: "./img/senacLogo.png",
+        image: "./IMG/senacLogo.png",
         company:"SENAC",
         years: {
             pt: "Jul/2024 - Out/2024  | Abr/2023 - Jul/2023 | Set/2022 - Dez/2022", 
@@ -368,7 +368,7 @@ const checkpoints = [
         },
     {
         position: 1400,
-        image: "./img/etecLogo.png",
+        image: "./IMG/etecLogo.png",
         company:"ETEC",
         years: {
             pt: "Jun/2016 - Nov/2022", 
@@ -385,7 +385,7 @@ const checkpoints = [
     },
     {
         position: 1550,
-        image: "./img/etecLogo.png",
+        image: "./IMG/etecLogo.png",
         company:"ETEC",
         years: {
             pt: "Mar/2018 - Dez/2019", 
@@ -402,7 +402,7 @@ const checkpoints = [
     },
     {
         position: 1800,
-        image: "./img/unipLogo.png",
+        image: "./IMG/unipLogo.png",
         company:"UNIP",
         years: {
             pt: "Abr/2016 - Jun/2017",
@@ -419,7 +419,7 @@ const checkpoints = [
     },
     {
         position: 2200,
-        image: "./img/thsLogo.png",
+        image: "./IMG/thsLogo.png",
         company:"THS INFORMÁTICA",
         years: {
             pt:"Abr/2014 - Ago/2015",
@@ -436,7 +436,7 @@ const checkpoints = [
     },
     {
         position: 2600,
-        image: "./img/evoluaLogo.png",
+        image: "./IMG/evoluaLogo.png",
         company:"ESCOLA EVOLUA",
         years: {
             pt: "Jun/2013 - Set/2013",
@@ -453,7 +453,7 @@ const checkpoints = [
     },
     {
         position: 3000,
-        image: "./img/aceLogo.png",
+        image: "./IMG/aceLogo.png",
         company:"ACE PF",
         years: {
             pt: "Jan/2009 - Out/2012",
@@ -478,32 +478,32 @@ const checkpoints = [
         projects: [
             {
                 name: "Gerador de QR Code",
-                image: "./img/qrCode.png",
+                image: "./IMG/qrCode.png",
                 link: "https://github.com/deivsbr/Gerador-de-QRCode-e-Password"
             },
             {
                 name: "Mundo Invertido",
-                image: "./img/mundoInvertido.png",
+                image: "./IMG/mundoInvertido.png",
                 link: "https://deivsbr.github.io/Mundo-Invertido/"
             },
             {
                 name: "Pokedex",
-                image: "./img/pokemon.png",
+                image: "./IMG/pokemon.png",
                 link: "https://deivsbr.github.io/Pokedex/"
             },
             {
                 name: "Vertical Plataform",
-                image: "./img/verticalPlataform.png",
+                image: "./IMG/verticalPlataform.png",
                 link: "https://deivsbr.github.io/Vertical-Plataform/"
             },
             {
                 name: "Dog Care",
-                image: "./img/dogCare.png",
+                image: "./IMG/dogCare.png",
                 link: "https://deivsbr.github.io/dog-care/"
             },
             {
                 name: "To-do List",
-                image: "./img/todoList.png",
+                image: "./IMG/todoList.png",
                 link: "https://deivsbr.github.io/todo/"
             },
         ]
