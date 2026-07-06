@@ -9,7 +9,10 @@ const welcomeResume = document.getElementById("welcomeResume");
 const initResume = document.getElementById("initResume");
 const buttonPlay = document.querySelector("#start");
 
-
+function toggleMenu() {
+  document.getElementById('navbar').classList.toggle('nav-active');
+  document.getElementById('hamburger').classList.toggle('active');
+}
 
 //VARIAVEIS DO PERSONAGEM
 let gameStarted= false;
@@ -133,7 +136,7 @@ const texts = {
         },
         about:{
             title:"WHO I AM",
-            text:`Hello, my name is Deividi.I hold a degree in Computer Science and a postgraduate qualification in Software Engineering.I have over 10 years of experience working in schools, teaching and providing support. Currently, I work on individual projects, including website development, prototyping, design, UI/UX, gamification and video editing.`
+            text:`Hello, my name is Deividi. I hold a degree in Computer Science and a postgraduate qualification in Software Engineering.I have over 10 years of experience working in schools, teaching and providing support. Currently, I work on individual projects, including website development, prototyping, design, UI/UX, gamification and video editing.`
         },
         contact:{
             send: "S E N D"
