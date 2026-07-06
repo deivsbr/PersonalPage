@@ -1764,6 +1764,10 @@ img {
         max-width: 100%; 
     }
 
+    .socialMedia { 
+        margin: 800px auto auto auto; 
+    }
+
     .floating-home { 
         width: 30px; 
         height: 30px; 
