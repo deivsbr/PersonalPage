@@ -149,53 +149,53 @@ const texts = {
 
 const skillsData = [
   { name: "HTML", color: "#E34F26", level: 90, img: {
-    dark: "../IMG/html_whiteLogo.png",
-    light:  "../IMG/html_blackLogo.png"
+    dark: "./IMG/html_whiteLogo.png",
+    light:  "./IMG/html_blackLogo.png"
   }
 },
   { name: "CSS", color: "#1572B6", level: 85, img: {
-    dark: "../IMG/css_whiteLogo.png",
-    light:"../IMG/css_blackLogo.png"
+    dark: "./IMG/css_whiteLogo.png",
+    light:"./IMG/css_blackLogo.png"
   }  
 },
   { name: "JavaScript", color: "#F7DF1E", level: 80, img: {
-    dark: "../IMG/js_whiteLogo.png",
-    light: "../IMG/js_blackLogo.png"
+    dark: "./IMG/js_whiteLogo.png",
+    light: "./IMG/js_blackLogo.png"
   }
 },
   { name: "Node.js", color: "#3C873A", level: 70, img: {
-    dark: "../IMG/node_whiteLogo.png",
-    light: "../IMG/node_blackLogo.png"
+    dark: "./IMG/node_whiteLogo.png",
+    light: "./IMG/node_blackLogo.png"
   }
 },
   { name: "React Native", color: "#61DAFB", level: 75, img: {
-    dark:"../IMG/react_whiteLogo.png",
-    light: "../IMG/react_blackLogo.png" 
+    dark:"./IMG/react_whiteLogo.png",
+    light: "./IMG/react_blackLogo.png" 
   }
 },
   { name: "Figma", color: "#F24E1E", level: 85, img: {
-    dark: "../IMG/figma_whiteLogo.png",
-    light: "../IMG/figma_blackLogo.png"
+    dark: "./IMG/figma_whiteLogo.png",
+    light: "./IMG/figma_blackLogo.png"
   }
 },
   { name: "After Effects", color: "#7A7FFF", level: 60, img: {
-    dark: "../IMG/ae_whiteLogo.png",
-    light: "../IMG/ae_blackLogo.png"
+    dark: "./IMG/ae_whiteLogo.png",
+    light: "./IMG/ae_blackLogo.png"
   }  
 },
   { name: "Premiere", color: "#E66BFF", level: 60, img: {
-    dark: "../IMG/pr_whiteLogo.png" ,
-    light: "../IMG/pr_blackLogo.png"
+    dark: "./IMG/pr_whiteLogo.png" ,
+    light: "./IMG/pr_blackLogo.png"
   }  
 },
   { name: "Illustrator", color: "#FF9A00", level: 70, img: {
-    dark: "../IMG/ai_whiteLogo.png",
-    light: "../IMG/ai_blackLogo.png"
+    dark: "./IMG/ai_whiteLogo.png",
+    light: "./IMG/ai_blackLogo.png"
   }  
 },
   { name: "Photoshop", color: "#31A8FF", level: 80, img: {
-    dark: "../IMG/ps_whiteLogo.png",
-    light: "../IMG/ps_blackLogo.png" 
+    dark: "./IMG/ps_whiteLogo.png",
+    light: "./IMG/ps_blackLogo.png" 
   }
 }
 ];
