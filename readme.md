@@ -51,26 +51,6 @@ Cada seção representa uma etapa da jornada do personagem, tornando a navegaç�
 
 ---
 
-## 📸 Galeria
-
-### Tela Inicial
-
-> Adicione uma imagem.
-
-### Seção Sobre
-
-> Adicione uma imagem.
-
-### Projetos
-
-> Adicione uma imagem.
-
-### Habilidades
-
-> Adicione uma imagem.
-
----
-
 ## ⚙️ Como executar
 
 Clone o repositório:
