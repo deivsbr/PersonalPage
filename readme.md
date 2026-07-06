@@ -76,8 +76,7 @@ Cada seção representa uma etapa da jornada do personagem, tornando a navegaç�
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-```
+https://github.com/deivsbr/PersonalPage.git```
 
 Entre na pasta:
 
