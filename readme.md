@@ -11,8 +11,8 @@ Em vez de uma navegação tradicional, o visitante acompanha um personagem que p
 > Adicione aqui um GIF ou imagem da tela inicial.
 
 ```md
-![PERSONAGEM PARADO](./assets/Idle.png);
-![PERSONAGEM ANDANDO](./assets/Walk.png);
+![PERSONAGEM PARADO](./ASSETS/Idle.png);
+![PERSONAGEM ANDANDO](./ASSETS/Walk.png);
 ```
 
 ---
