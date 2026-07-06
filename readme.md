@@ -1,4 +1,4 @@
-# 🎮 Pixel Portfolio
+# 🎮 Portfolio
 
 Um portfólio interativo desenvolvido com **HTML, CSS e JavaScript**, inspirado em jogos retrô de plataforma e pixel art.
 
@@ -11,8 +11,8 @@ Em vez de uma navegação tradicional, o visitante acompanha um personagem que p
 > Adicione aqui um GIF ou imagem da tela inicial.
 
 ```md
-![PERSONAGEM]('assets/Idle.png');
-![PERSONAGEM]('assets/Walk.png');
+![PERSONAGEM PARADO](./assets/Idle.png);
+![PERSONAGEM ANDANDO](./assets/Walk.png);
 ```
 
 ---
