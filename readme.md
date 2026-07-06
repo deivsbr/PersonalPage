@@ -8,12 +8,14 @@ Em vez de uma navegação tradicional, o visitante acompanha um personagem que p
 
 ## ✨ Demonstração
 
-> Adicione aqui um GIF ou imagem da tela inicial.
+> PERSONAGEM
 
+![PERSONAGEM PARADO](./ASSETS/Idle.png)
+![PERSONAGEM ANDANDO](./ASSETS/Walk.png)
 
-![PERSONAGEM PARADO](./ASSETS/Idle.png);
-![PERSONAGEM ANDANDO](./ASSETS/Walk.png);
-
+> CENÁRIO
+![CENÁRIO BLACK](./IMG/CenarioBlack.png)
+![CENARIO LIGHT](./IMG/CenarioLight.png)
 
 ---
 
