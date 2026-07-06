@@ -11,7 +11,8 @@ Em vez de uma navegação tradicional, o visitante acompanha um personagem que p
 > Adicione aqui um GIF ou imagem da tela inicial.
 
 ```md
-![Preview](./assets/images/preview.gif)
+![PERSONAGEM]('assets/Idle.png');
+![PERSONAGEM]('assets/Walk.png');
 ```
 
 ---
