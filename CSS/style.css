@@ -1315,7 +1315,7 @@ img {
     }
     
     .socialMedia { 
-        margin: 150px 0 40px 60px; 
+        margin: 200px 0 40px 60px; 
     }
 
     #molduraSend {
@@ -1330,7 +1330,6 @@ img {
      .btnEnv{
         width: 150px;
         margin: -40px 0 0 0;
-        border: 2px solid red;
     }
 }
 
