@@ -1090,7 +1090,6 @@ text-transform: uppercase;
     margin: -700px 0 0 auto;
     padding: 0 20px 60px 0px;
     overflow: hidden;
-    border: 2px solid yellow;
 }
 
 #contactForm{
@@ -1103,7 +1102,6 @@ text-transform: uppercase;
     width: min(600px, 80vw);
     max-width: 800px;
     margin: -500px 0 0 auto;
-    border: 2px solid green;
 }
 
 #firstInput{
@@ -1296,13 +1294,11 @@ img {
     .contactBase{
         width: 400px;
         margin: -600px 0 0 auto;
-        border: 2px solid red;
     }
     
     #contactForm {
         width: 400px;
         margin: -400px 0 0 auto; 
-        border: 2px solid red;
     }
 
     .formsInfo{
@@ -1505,13 +1501,11 @@ img {
     .contactBase{
         width: 400px;
         margin: -700px 0 0 20px;
-        border: 2px solid red;
     }
     
     #contactForm {
         width: 400px;
         margin: -400px 0 0 0;
-        border: 2px solid red;
     }
 }
 
@@ -1760,13 +1754,11 @@ img {
     .contactBase{
         width: 400px;
         margin: -700px 0 0 20px;
-        border: 2px solid rgb(22, 172, 11);
     }
     
     #contactForm {
         width: 400px;
         margin: -400px 0 0 0;
-        border: 2px solid red;
     }
     
     input, textarea { 
